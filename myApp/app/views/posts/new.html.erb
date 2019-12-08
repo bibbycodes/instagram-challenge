@@ -4,5 +4,7 @@
 <%= form_for @post do |f| %>
   <%= f.label :description %>
   <%= f.text_area(:description, size: '40x5') %>
+  <%= f.label "Photo"%>
+  <%= f.file_field :image %>
   <%= f.submit %>
 <% end %>

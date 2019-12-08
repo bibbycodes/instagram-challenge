@@ -1,5 +1,15 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
-<% @posts.each |post| do %>
+<% @posts.each do |post| %>
+<ul>
+  <li><%= post.message %></li>
+  <li><%= post.image %></li>
+  <li><%= post.user.first %>
+      <%= post.user.last %></li>
+  <li><%= post.created_at %></li>
+  <li><%= link_to 'Show', post_path(post) %></li>
+  <li><%= link_to 'Edit', edit_post_path(post) %></li>
+  <li><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+</ul>
 <% end %>
