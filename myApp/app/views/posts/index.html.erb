@@ -2,14 +2,13 @@
 <p>Find me in app/views/posts/index.html.erb</p>
 
 <% @posts.each do |post| %>
-<ul>
-  <li><%= post.message %></li>
-  <li><%= post.image %></li>
-  <li><%= post.user.first %>
-      <%= post.user.last %></li>
-  <li><%= post.created_at %></li>
-  <li><%= link_to 'Show', post_path(post) %></li>
-  <li><%= link_to 'Edit', edit_post_path(post) %></li>
-  <li><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-</ul>
+  <ul>
+    <li><%= post.description %></li>
+    <img src="<%= post.image_path %>">
+    <li><%= post.user.username %></li>
+    <li><%= post.created_at %></li>
+    <li><%= link_to 'Show', post_path(post) %></li>
+    <li><%= link_to 'Edit', edit_post_path(post) %></li>
+    <li><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
 <% end %>
