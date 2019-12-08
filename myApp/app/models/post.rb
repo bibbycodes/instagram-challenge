@@ -3,6 +3,6 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   def image_path
-    ActiveStorage::Blob.service.path_for(image.key)
+    ActiveStorage::Blob.service.send(:path_for, image.key)
   end
 end
