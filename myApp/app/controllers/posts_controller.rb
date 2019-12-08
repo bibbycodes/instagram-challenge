@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  def mew
+  def new
+    @post = Post.new
   end
 
   def index
